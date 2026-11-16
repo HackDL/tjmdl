@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0c0d">
+<meta name="description" content="TJMDL® — A new perspective on bags. Coming soon.">
+<title>TJMDL® — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b0b0c;--cream:#f7f1e9;--accent:#dac7ae;--line:rgba(255,255,255,.3)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--ink);color:var(--cream)}
+body{font-family:'DM Sans',Arial,sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+.stage{position:relative;width:100%;height:100svh;min-height:560px;isolation:isolate;overflow:hidden;background:#0d0c0d}
+.backdrop{position:absolute;inset:-8% -3%;display:flex;justify-content:center;gap:clamp(8px,1.2vw,21px);transform:rotate(-7deg) scale(1.07);z-index:-3}
+.film{position:relative;flex:1;min-width:0;max-width:380px;background:#0b0b0c;padding:0 clamp(9px,1.25vw,19px);box-shadow:0 0 0 1px #35312f,0 0 34px rgba(0,0,0,.8);overflow:hidden}
+.film:before,.film:after{content:'';position:absolute;top:0;bottom:0;width:7px;z-index:3;background:repeating-linear-gradient(to bottom,#827a6f 0 4px,transparent 4px 16px,#080809 16px 25px,transparent 25px 34px);opacity:.8}
+.film:before{left:2px}.film:after{right:2px}
+.track{display:flex;flex-direction:column;gap:clamp(8px,1vw,15px);animation:scroll-up var(--speed,64s) linear infinite;will-change:transform}
+.film.down .track{animation-name:scroll-down}
+.frame{position:relative;height:clamp(170px,27vh,335px);flex:none;background:#242022;overflow:hidden;border:1px solid #423b37}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.98) contrast(1.03) brightness(1.13);transition:filter .6s,transform 1s}
+.frame:after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 20px rgba(0,0,0,.13);pointer-events:none}
+.frame .serial{position:absolute;bottom:10px;left:12px;color:#fff9;font-size:9px;letter-spacing:.22em;text-shadow:0 1px 4px #000;z-index:2}
+.film:hover .track{animation-play-state:paused}.film:hover img{filter:saturate(1.05) contrast(1.02) brightness(1.18)}
+@keyframes scroll-up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes scroll-down{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+.shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(5,5,6,.17),rgba(5,5,6,.01) 18%,rgba(5,5,6,.02) 82%,rgba(5,5,6,.25)),linear-gradient(to right,rgba(5,5,6,.17),transparent 22%,transparent 78%,rgba(5,5,6,.17));pointer-events:none}
+.center-veil{position:absolute;inset:0;background:radial-gradient(ellipse 48% 52% at 50% 52%,rgba(0,0,0,.72) 1%,rgba(0,0,0,.48) 49%,rgba(0,0,0,0) 100%);z-index:0;pointer-events:none}
+.header{position:absolute;z-index:4;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(22px,3.4vw,52px) clamp(24px,5vw,88px)}
+.monogram{font-weight:700;font-size:clamp(21px,2vw,31px);letter-spacing:.2em;color:#fff}.monogram sup{font-size:.49em;vertical-align:super;line-height:0;letter-spacing:0;margin-left:3px}
+.header-right{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#f9f1e6b7}
+.hero{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2;padding:100px 20px 70px}
+.eyebrow{display:flex;align-items:center;gap:13px;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:clamp(18px,3vh,32px)}.eyebrow:before,.eyebrow:after{content:'';height:1px;width:23px;background:var(--accent);opacity:.8}
+h1{font-family:'Italiana',Georgia,serif;font-weight:400;font-size:clamp(76px,12vw,190px);line-height:.81;letter-spacing:-.067em;margin:0 0 24px;text-shadow:0 5px 35px #0008}
+h1 .register{font-family:Arial,sans-serif;font-weight:600;font-size:.24em;vertical-align:super;line-height:0;letter-spacing:0;margin-left:.12em}
+.headline{font-family:'Italiana',Georgia,serif;font-size:clamp(25px,3vw,45px);letter-spacing:.015em;font-weight:400;margin:0 0 14px}
+.descriptor{font-size:10px;letter-spacing:.29em;text-transform:uppercase;color:#ede3d6b9;margin:0 0 clamp(29px,5vh,60px)}
+.rule{height:1px;width:min(430px,75vw);background:linear-gradient(90deg,transparent,var(--line),transparent);margin-bottom:28px}
+.count-label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:15px}
+.timer{display:flex;justify-content:center;gap:clamp(16px,3.2vw,47px)}.time-unit{min-width:44px}.digits{font-family:'Italiana',Georgia,serif;font-size:clamp(36px,5vw,63px);line-height:1;font-variant-numeric:tabular-nums}.unit-name{font-size:9px;letter-spacing:.21em;text-transform:uppercase;color:#e9dfd3a9;margin-top:9px}
+.footer{position:absolute;bottom:0;left:0;right:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:clamp(22px,3vw,42px) clamp(24px,5vw,88px);font-size:10px;letter-spacing:.18em;color:#f7eee1a8;text-transform:uppercase}.footer span:last-child{letter-spacing:.1em}
+.bottom-progress{position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent 0%,#e1c5a3 50%,transparent 100%);opacity:.5;z-index:5}
+@media(max-width:800px){.backdrop{inset:-10% -40%;gap:9px;transform:rotate(-8deg) scale(1.1)}.film{flex:1;min-width:145px;padding:0 10px}.film:nth-child(1),.film:nth-child(5){display:none}.frame{height:26vh;min-height:160px}.center-veil{background:radial-gradient(ellipse 78% 47% at 50% 49%,rgba(0,0,0,.79),rgba(0,0,0,.58) 50%,rgba(0,0,0,.02) 100%)}.header-right{font-size:9px}.descriptor{font-size:9px;line-height:2}.hero{padding:120px 16px 80px}.footer{font-size:9px;gap:12px}.footer span:last-child{text-align:right}}
+@media(max-width:410px){h1{font-size:69px}.timer{gap:19px}.digits{font-size:37px}.header-right{letter-spacing:.13em}.eyebrow{letter-spacing:.25em}}
+@media(prefers-reduced-motion:reduce){.track{animation-duration:180s}.film:hover .track{animation-play-state:paused}}
+</style>
+</head>
+<body>
+<main class="stage">
+ <div class="backdrop" id="filmwall" aria-hidden="true"></div>
+ <div class="shade"></div><div class="center-veil"></div>
+ <header class="header"><div class="monogram">TJMDL<sup>®</sup></div><div class="header-right">An introduction in motion&nbsp; / &nbsp;2027</div></header>
+ <section class="hero" aria-label="Brand launch countdown">
+   <div class="eyebrow">A new chapter in bags</div>
+   <h1>TJMDL<span class="register">®</span></h1>
+   <p class="headline">The art of carrying.</p>
+   <p class="descriptor">Designed to be seen. Made to be carried.</p>
+   <div class="rule"></div>
+   <div class="count-label" id="count-label">The reveal begins in</div>
+   <div class="timer" role="timer" aria-label="Time remaining until launch">
+    <div class="time-unit"><div class="digits" id="d">000</div><div class="unit-name">Days</div></div>
+    <div class="time-unit"><div class="digits" id="h">00</div><div class="unit-name">Hours</div></div>
+    <div class="time-unit"><div class="digits" id="m">00</div><div class="unit-name">Mins</div></div>
+    <div class="time-unit"><div class="digits" id="s">00</div><div class="unit-name">Secs</div></div>
+   </div>
+ </section>
+ <footer class="footer"><span>© <span id="year">2026</span> TJMDL®</span><span>Something worth waiting for</span></footer>
+ <div class="bottom-progress"></div>
+</main>
+<script>
+// Change just this line for your actual launch date (timezone included).
+const LAUNCH_DATE = '2027-06-01T10:00:00-07:00';
+
+// Locally bundled original concept imagery for this film strip.
+// These are illustrative bag concepts, not photos of existing TJMDL products.
+const photos = Array.from({length:12}, (_,i)=>`assets/bag-${String(i+1).padStart(2,'0')}.webp`);
+const wall=document.getElementById('filmwall');
+for(let c=0;c<5;c++){
+ const film=document.createElement('div');film.className='film'+(c%2?' down':'');
+ film.style.setProperty('--speed',`${65+c*9}s`);
+ const track=document.createElement('div');track.className='track';
+ // Duplicate an identical sequence for seamless vertical looping.
+ const indices=Array.from({length:7},(_,i)=>(c*3+i*2)%photos.length);
+ for(let repeat=0;repeat<2;repeat++){
+  for(let i=0;i<indices.length;i++){
+   const frame=document.createElement('div');frame.className='frame';
+   const img=document.createElement('img');
+   img.src=photos[indices[i]];
+   img.alt='';img.loading=(i<4&&repeat===0)?'eager':'lazy';img.decoding='async';
+   frame.appendChild(img);
+   const serial=document.createElement('span');serial.className='serial';serial.textContent=`TJ / ${String(indices[i]+1).padStart(2,'0')}`;
+   frame.appendChild(serial);track.appendChild(frame);
+  }
+ }
+ film.appendChild(track);wall.appendChild(film);
+}
+const end=new Date(LAUNCH_DATE).getTime();
+const dom={d:document.getElementById('d'),h:document.getElementById('h'),m:document.getElementById('m'),s:document.getElementById('s')};
+document.getElementById('year').textContent=new Date().getFullYear();
+function tick(){const diff=Math.max(0,end-Date.now());const seconds=Math.floor(diff/1000);dom.d.textContent=String(Math.floor(seconds/86400)).padStart(3,'0');dom.h.textContent=String(Math.floor(seconds%86400/3600)).padStart(2,'0');dom.m.textContent=String(Math.floor(seconds%3600/60)).padStart(2,'0');dom.s.textContent=String(seconds%60).padStart(2,'0');if(diff===0)document.getElementById('count-label').textContent='The moment is here';}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
